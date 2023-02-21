@@ -1,3 +1,4 @@
+# install ruby mysql lib
 class ruby::mysql {
   include ruby
   if versioncmp($facts['os']['release']['major'],'9') < 0 {
@@ -6,7 +7,7 @@ class ruby::mysql {
     $pkg_name = 'ruby-mysql2'
   }
   package{$pkg_name:
-    ensure => present,
+    ensure  => present,
     require => Package['ruby'],
   }
 }
